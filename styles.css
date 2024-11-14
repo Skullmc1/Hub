@@ -1,0 +1,263 @@
+/* General Styling */
+@font-face {
+    font-family: 'AquireBold';
+    src: url('fonts/AquireBold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'AquireBold', sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    cursor: none;
+    position: relative; 
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    z-index: 1000;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+nav a {
+    color: #ffffff;
+    margin: 0 1em;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffc3a0;
+}
+
+/* Section Styling */
+section {
+    padding: 4em 2em;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+    text-align: center;
+}
+
+section h1 {
+    font-size: 2em;
+    color: #ffafbd;
+    margin-bottom: 0.5em;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+section p {
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.5em;
+    font-size: 1.2em;
+}
+
+/* Projects Section Styling */
+#projects .project-gallery {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.project {
+    background-color: #333;
+    padding: 1em;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.project img {
+    width: 150px;
+    height: 150px; /* Ensures circular shape */
+    border-radius: 50%; /* Perfect circle */
+    transition: transform 0.3s ease;
+    object-fit: cover; /* Ensures image scales well inside the circle */
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+.project img:hover {
+    transform: scale(1.1);
+}
+
+/* Button Styling */
+button {
+    padding: 0.75em 2em;
+    background: linear-gradient(45deg, #ffafbd, #ffc3a0);
+    border: none;
+    color: #333;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(255, 195, 160, 0.4);
+}
+
+/* Keyframes for Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Navbar styling */
+nav {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 1em 2em;
+    z-index: 1000;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Brand styling */
+.brand {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo and brand title */
+.logo {
+    width: 40px; /* Adjust as needed */
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%; /* Makes it a circle */
+}
+
+.brand-title {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #ffc3a0;
+    font-family: 'AquireBold', sans-serif; /* Use custom font */
+}
+
+/* Navbar links styling */
+.nav-links {
+    display: flex;
+    gap: 1em;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 8px;
+}
+
+.nav-links a:hover {
+    color: #111111;
+    background-color: #ffc3a0; /* Make hover effect stand out */
+}
+
+/* Optional: Add a slight color effect on scroll */
+nav.scrolled {
+    background-color: #000000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project {
+        width: 90%;
+        margin-bottom: 1em;
+    }
+}
+
+/* Custom Cursor */
+.custom-cursor {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #ffafbd;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: transform 0.1s ease, background-color 0.3s ease;
+    border-radius: 5px; /* Rounded corners for the square cursor */
+    animation: rotateCursor 1s linear infinite; /* Rotate animation */
+}
+
+/* Rotating Cursor */
+@keyframes rotateCursor {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Cursor Wave Effect */
+.cursor-wave {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: transparent; /* Make the square hollow */
+    border: 2px solid #ffc3a0; /* Outline color for the square */
+    border-radius: 5px;
+    pointer-events: none;
+    animation: waveAnimation 2s forwards; /* Slower animation */
+}
+
+/* Wave Animation */
+@keyframes waveAnimation {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(4); /* Slightly smaller scaling */
+        opacity: 0;
+    }
+}
+
+/* Hover Effects for Links and Buttons */
+a:hover, button:hover {
+    color: #ffc3a0; /* Change text color on hover */
+}
+
+a:hover ~ .custom-cursor, button:hover ~ .custom-cursor {
+    background-color: #ffc3a0;
+    transform: translate(-50%, -50%) scale(1.5);
+}
