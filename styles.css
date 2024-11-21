@@ -1,263 +1,224 @@
-/* General Styling */
-@font-face {
-    font-family: 'AquireBold';
-    src: url('fonts/AquireBold.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+:root {
+    --primary-blue: #4361ee;
+    --primary-purple: #7209b7;
+    --gradient: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --text-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'AquireBold', sans-serif;
-    background-color: #1a1a1a;
-    color: #ffffff;
-    margin: 0;
-    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #0a0a1f;
+    color: var(--text-color);
+    min-height: 100vh;
+    line-height: 1.6;
     cursor: none;
-    position: relative; 
+    -webkit-user-select: none;  /* Safari */
+    -ms-user-select: none;      /* IE 10 and IE 11 */
+    user-select: none;          /* Standard syntax */
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
 }
 
-nav {
-    position: sticky;
-    top: 0;
-    background-color: #333;
-    display: flex;
-    justify-content: center;
-    padding: 1em;
-    z-index: 1000;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-nav a {
-    color: #ffffff;
-    margin: 0 1em;
-    text-decoration: none;
-    font-size: 1.1em;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: #ffc3a0;
-}
-
-/* Section Styling */
-section {
-    padding: 4em 2em;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s ease, transform 1s ease;
-    text-align: center;
-}
-
-section h1 {
-    font-size: 2em;
-    color: #ffafbd;
-    margin-bottom: 0.5em;
-    animation: fadeIn 1.5s ease forwards;
-}
-
-section p {
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.5em;
-    font-size: 1.2em;
-}
-
-/* Projects Section Styling */
-#projects .project-gallery {
-    display: flex;
-    gap: 1em;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 2em;
-}
-
-.project {
-    background-color: #333;
-    padding: 1em;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 300px;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.project img {
-    width: 150px;
-    height: 150px; /* Ensures circular shape */
-    border-radius: 50%; /* Perfect circle */
-    transition: transform 0.3s ease;
-    object-fit: cover; /* Ensures image scales well inside the circle */
-}
-
-.project:hover {
-    transform: scale(1.05);
-}
-
-.project img:hover {
-    transform: scale(1.1);
-}
-
-/* Button Styling */
-button {
-    padding: 0.75em 2em;
-    background: linear-gradient(45deg, #ffafbd, #ffc3a0);
-    border: none;
-    color: #333;
-    font-weight: bold;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(255, 195, 160, 0.4);
-}
-
-/* Keyframes for Fade In */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-/* Navbar styling */
-nav {
-    position: sticky;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #000000;
-    padding: 1em 2em;
-    z-index: 1000;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-/* Brand styling */
-.brand {
-    display: flex;
-    align-items: center;
-}
-
-/* Logo and brand title */
-.logo {
-    width: 40px; /* Adjust as needed */
-    height: 40px;
-    margin-right: 10px;
-    border-radius: 50%; /* Makes it a circle */
-}
-
-.brand-title {
-    font-size: 1.3em;
-    font-weight: bold;
-    color: #ffc3a0;
-    font-family: 'AquireBold', sans-serif; /* Use custom font */
-}
-
-/* Navbar links styling */
-.nav-links {
-    display: flex;
-    gap: 1em;
-}
-
-.nav-links a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1.1em;
-    font-weight: bold;
-    padding: 0.5em 1em;
-    transition: color 0.3s ease, background-color 0.3s ease;
-    border-radius: 8px;
-}
-
-.nav-links a:hover {
-    color: #111111;
-    background-color: #ffc3a0; /* Make hover effect stand out */
-}
-
-/* Optional: Add a slight color effect on scroll */
-nav.scrolled {
-    background-color: #000000;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
-}
-
-/* Mobile View */
-@media (max-width: 768px) {
-    .nav-links {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .project-gallery {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .project {
-        width: 90%;
-        margin-bottom: 1em;
-    }
-}
-
-/* Custom Cursor */
+/* Custom cursor base styles */
 .custom-cursor {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background-color: #ffafbd;
-    transform: translate(-50%, -50%);
+    position: fixed;
     pointer-events: none;
-    transition: transform 0.1s ease, background-color 0.3s ease;
-    border-radius: 5px; /* Rounded corners for the square cursor */
-    animation: rotateCursor 1s linear infinite; /* Rotate animation */
+    z-index: 9999;
+    transform: translate(-50%, -50%);
 }
 
-/* Rotating Cursor */
-@keyframes rotateCursor {
-    0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-}
-
-/* Cursor Wave Effect */
-.cursor-wave {
+/* Outer ring */
+.custom-cursor::before {
+    content: '';
     position: absolute;
     width: 20px;
     height: 20px;
-    background-color: transparent; /* Make the square hollow */
-    border: 2px solid #ffc3a0; /* Outline color for the square */
-    border-radius: 5px;
-    pointer-events: none;
-    animation: waveAnimation 2s forwards; /* Slower animation */
+    border: 2px solid #8B5CF6; /* Purple border */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.2s ease;
 }
 
-/* Wave Animation */
-@keyframes waveAnimation {
-    0% {
-        transform: scale(0);
-        opacity: 1;
+/* Center dot */
+.custom-cursor::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: #8B5CF6; /* Purple dot */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.2s ease;
+}
+
+/* Hover state - transform to filled circle */
+a:hover ~ .custom-cursor::before,
+button:hover ~ .custom-cursor::before,
+.project-card:hover ~ .custom-cursor::before,
+.view-btn:hover ~ .custom-cursor::before {
+    width: 16px;
+    height: 16px;
+    background-color: #8B5CF6;
+    border-width: 0;
+}
+
+/* Hide the center dot during hover */
+a:hover ~ .custom-cursor::after,
+button:hover ~ .custom-cursor::after,
+.project-card:hover ~ .custom-cursor::after,
+.view-btn:hover ~ .custom-cursor::after {
+    opacity: 0;
+}
+
+/* Don't forget to hide the default cursor */
+body {
+    cursor: none;
+}
+
+/* Ensure clickable elements don't show default cursor */
+a, button, .project-card, .view-btn {
+    cursor: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 3rem;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.accent {
+    color: var(--primary-purple);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(67, 97, 238, 0.15);
+    border-color: var(--primary-blue);
+}
+
+.card-content {
+    padding: 2rem;
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.project-card p {
+    color: #a0a0a0;
+    margin-bottom: 1.5rem;
+}
+
+.view-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: var(--gradient);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.view-btn:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+}
+
+/* Context Menu Styles */
+.context-menu {
+    display: none;
+    position: fixed;
+    background: rgba(10, 10, 31, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(67, 97, 238, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(67, 97, 238, 0.2);
+    padding: 0.5rem;
+    z-index: 1000;
+}
+
+.context-menu ul {
+    list-style: none;
+}
+
+.context-menu li {
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.context-menu li:hover {
+    background: var(--gradient);
+}
+
+.context-menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 2rem 1rem;
     }
-    100% {
-        transform: scale(4); /* Slightly smaller scaling */
-        opacity: 0;
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .project-grid {
+        grid-template-columns: 1fr;
     }
 }
 
-/* Hover Effects for Links and Buttons */
-a:hover, button:hover {
-    color: #ffc3a0; /* Change text color on hover */
-}
-
-a:hover ~ .custom-cursor, button:hover ~ .custom-cursor {
-    background-color: #ffc3a0;
-    transform: translate(-50%, -50%) scale(1.5);
-}
+/* Prevent dragging of images specifically */
+img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+} 

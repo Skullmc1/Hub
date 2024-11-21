@@ -3,61 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Javiru Geesath's Portfolio - Web and Software Developer">
-    <meta property="og:title" content="Javiru Geesath's Portfolio">
-    <meta property="og:description" content="A versatile Web and Software Developer with experience in both front-end and back-end development.">
-    <meta property="og:image" content="pics/logo.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <title>Javiru Geesath's Portfolio</title>
+    <title>Project Hub</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Add Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <div class="brand">
-            <!-- You can use an image or text for the brand -->
-            <img src="pics/logo.jpg" alt="Logo" class="logo">
-            <span class="brand-title">Javiru Geesath</span>
-        </div>
-        <div class="nav-links">
-            <a href="#about">About Me</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
-
-    <section id="about">
-        <h1>About Me</h1>
-        <p>Hello! I’m Javiru Geesath, a versatile Web and Software Developer. I work on both front-end and back-end development, bringing ideas to life.</p>
-    </section>
-
-    <section id="projects">
-        <h1>Projects</h1>
-        <div class="project-gallery">
-            <div class="project">
-                <img src="pics/web1.jpg" alt="Website Project for Los Chicos Minecraft Server">
-                <p>Los Chicos</p>
-            </div>
-            <div class="project">
-                <img src="pics/web2.jpg" alt="Sample Website Project">
-                <p>Project</p>
-            </div>
-            <div class="project">
-                <img src="pics/software1.jpg" alt="Software Project 1">
-                <p>Software</p>
-            </div>
-            <div class="project">
-                <img src="pics/software2.jpg" alt="Software Project 2">
-                <p>Software</p>
-            </div>
-        </div>
-    </section>
     <div class="custom-cursor"></div>
-    <section id="contact">
-        <h1>Contact</h1>
-        <p>Feel free to reach out if you’d like to discuss a project or just say hello!</p><br>
-        <button id="contactButton" aria-label="Contact Javiru Geesath">Contact Me</button>
-    </section>
+    <div class="container">
+        <h1>Project <span class="accent">Hub</span></h1>
+        
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="card-content">
+                    <h3>Femboy Gallery</h3>
+                    <p>A gallery showcase project</p>
+                    <a href="femboy gallery/index.html" class="view-btn">View Project</a>
+                </div>
+            </div>
 
-    <script src="scripts.js"></script>
+            <div class="project-card">
+                <div class="card-content">
+                    <h3>Futuristic School</h3>
+                    <p>Educational platform concept</p>
+                    <a href="futuristic school/index.html" class="view-btn">View Project</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="card-content">
+                    <h3>Lethal Company Site</h3>
+                    <p>Game-related website</p>
+                    <a href="Lethal company site/index.html" class="view-btn">View Project</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="card-content">
+                    <h3>Solar Kingdom</h3>
+                    <p>Solar Company project</p>
+                    <a href="solarkingdom/index.html" class="view-btn">View Project</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="card-content">
+                    <h3>Supermarket</h3>
+                    <p>Shopping platform concept</p>
+                    <a href="supermarket/index.html" class="view-btn">View Project</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contextMenu" class="context-menu">
+        <ul>
+            <li><a href="femboy gallery/index.html">Femboy Gallery</a></li>
+            <li><a href="futuristic school/index.html">Futuristic School</a></li>
+            <li><a href="Lethal company site/index.html">Lethal Company Site</a></li>
+            <li><a href="solarkingdom/index.html">Solar Kingdom</a></li>
+            <li><a href="supermarket/index.html">Supermarket</a></li>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
 </body>
-</html>
+</html> 
